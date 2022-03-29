@@ -11,6 +11,8 @@ import { Observable } from 'rxjs';
 
 export class Tab1Page {
   public getMahasiswa: any;
+  public deleteMahasiswa: any;
+
   constructor(
     private http: HttpClient
   ) { }
@@ -29,11 +31,21 @@ export class Tab1Page {
       this.getMahasiswa = result;
     });
   }
- 
 
-
-
-
+  deleteData(npm) {
+    let data: Observable<any>;
+    data = this.http.get(
+      'http://localhost/CodeIgniter_API/index.php/api/DeleteData/' + npm
+    );
+    data.subscribe((result) => {
+      this.deleteMahasiswa = result;
+      console.log(result.status);
+      if (result.status === 'Ok') {
+        alert('Delete Data Successfully!');
+        this.ionViewWillEnter();
+      }
+    });
+  }
 }
 
 

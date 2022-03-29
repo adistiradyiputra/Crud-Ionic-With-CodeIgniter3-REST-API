@@ -1,7 +1,7 @@
 <ion-header>
     <ion-toolbar color="primary">
         <ion-title>
-            Digiwork Dynamic - Table
+            Data Mahasiswa
         </ion-title>
     </ion-toolbar>
 </ion-header>
@@ -15,11 +15,12 @@
         <thead class="table mb-0"> 
           <tr>
               <th>No</th>
-              <th>NIS</th>
+              <th>NPM</th>
               <th>Nama</th>
               <th>Jurusan</th>
               <th>Prodi</th>
               <th>Kelas</th>
+              <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -30,6 +31,14 @@
               <td>{{siswa.jurusan}}</td>
               <td>{{siswa.prodi}}</td>
               <td>{{siswa.kelas}}</td>
+              <td>
+                <ion-button type="submit" routerLink="/update/{{siswa.npm}}" size="small" color="warning">
+                  Edit
+                </ion-button>
+               <ion-button type="submit"size="small" (click)="deleteData(siswa.npm)" color="danger">
+                  Delete
+              </ion-button>
+              </td>
             </tr>
         </tbody>
       </table>
