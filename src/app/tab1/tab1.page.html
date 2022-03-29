@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>
+            Digiwork Dynamic - Table
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-card>        
+  <ion-card-content>
+
+      <table class="table table-striped">
+        <thead class="table mb-0"> 
+          <tr>
+              <th>No</th>
+              <th>NIS</th>
+              <th>Nama</th>
+              <th>Jurusan</th>
+              <th>Prodi</th>
+              <th>Kelas</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let siswa of getMahasiswa; let i=index;">
+              <td>{{i+1}}</td>
+              <td>{{siswa.npm}}</td>
+              <td>{{siswa.nama}}</td>
+              <td>{{siswa.jurusan}}</td>
+              <td>{{siswa.prodi}}</td>
+              <td>{{siswa.kelas}}</td>
+            </tr>
+        </tbody>
+      </table>
+
+        </ion-card-content>
+  </ion-card>
+
+</ion-content>
